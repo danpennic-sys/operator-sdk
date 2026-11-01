@@ -1,7 +1,7 @@
 {
   "name": "@op/sdk",
-  "version": "0.1.0",
-  "description": "Operator Pages SDK — MCP propose→confirm→apply client, QuantumGuard pack helpers, stack runtime contracts",
+  "version": "0.1.1",
+  "description": "Operator Pages SDK — simple Operator client (MCP + pack shape)",
   "type": "module",
   "exports": {
     ".": "./src/index.js",
@@ -20,10 +20,5 @@
     "type": "git",
     "url": "https://github.com/danpennic-sys/operator-sdk.git"
   },
-  "keywords": [
-    "operator-pages",
-    "quantumguard",
-    "mcp",
-    "evidence"
-  ]
+  "keywords": ["operator-pages", "quantumguard", "mcp"]
 }
