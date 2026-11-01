@@ -1,6 +1,6 @@
 # @op/sdk
 
-Operator Pages client. **One class for almost everything.**
+Talk to Operator Pages. That’s the whole public story.
 
 ```bash
 npm install github:danpennic-sys/operator-sdk
@@ -11,18 +11,12 @@ import { Operator } from "@op/sdk";
 
 const op = new Operator({ url: process.env.FORCE_MCP_URL });
 
-// Read
-await op.call("list_schedules");
-
-// Write (must confirm)
-await op.run("register_schedule", { schedule_id: "backup", agent_id: "backup", kind: "interval", expression: "60", enabled: true }, { confirm: true });
-
-// Sealed pack? (shape only — use `qg verify` for signatures)
-op.looksSealed(JSON.parse(fs.readFileSync("sealed.json", "utf8")));
+await op.call("list_schedules");           // read
+await op.run("register_schedule", args, { confirm: true }); // write
 ```
 
-Requires **Node 26+**. Writes without `confirm: true` do nothing. Empty allowlist blocks agent writes when you set `allowlist` on the constructor.
+Writes do nothing without `{ confirm: true }`.
 
-Advanced modules (`mcp`, `pack`, `runtime`) stay available; most apps never import them.
+Need internals (pack shape, runtime floors, raw MCP)? Ask — or open `src/`. Not required to ship.
 
-MIT · [Operator Pages](https://github.com/danpennic-sys)
+Node 26+ · MIT
