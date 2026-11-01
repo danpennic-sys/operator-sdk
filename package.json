@@ -1,0 +1,29 @@
+{
+  "name": "@op/sdk",
+  "version": "0.1.0",
+  "description": "Operator Pages SDK — MCP propose→confirm→apply client, QuantumGuard pack helpers, stack runtime contracts",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js",
+    "./mcp": "./src/mcp.js",
+    "./pack": "./src/pack.js",
+    "./runtime": "./src/runtime.js"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=26"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danpennic-sys/operator-sdk.git"
+  },
+  "keywords": [
+    "operator-pages",
+    "quantumguard",
+    "mcp",
+    "evidence"
+  ]
+}
